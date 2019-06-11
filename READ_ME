@@ -1,0 +1,45 @@
+This package contains a compatibility port of the pLucid
+interpreter for Linux, Mac OSX, and Windows.
+This has been tested with gcc version > 4
+
+If you have any questions about this port contact Dominic Orchard
+(dom.orchard@gmail.com)
+
+pLucid originally written by Tony Faustini.
+
+There are 9 subdirectories:
+        p1              :Source for filter1 (lucid -> lucid parse tree(pt))
+                                          i.e. checks for syntax errors.
+        p2              :Source for filter2 (lucid pt -> lucid pt)
+                                          checks for nameclashes
+        p3              :Source for filter3 (lucid pt -> lucid pt)
+                                          expands upon and whenever.
+        p4              :Source for filter4(lucid pt->structured lucid pt)
+        p5              :Source for filter5 (s-lucid pt -> lucid i-code)
+	evaluator	:Source for the lucid evaluator
+        manual          :lucid programming manual/UNIX manual entry
+        progs           :Example lucid programs
+        shell_scripts   :Scripts for compiling and/or running
+                         lucid programs
+
+
+Installing pLucid
+================
+
+ In directory p1 change the fourth line of file main.c to your install
+ directory. It is currently:
+   
+     #DEFINE INCDIR "/usr/local/bin"
+
+ Then run:
+
+     make
+
+ Then run:
+
+     make install
+
+ The default install location is /usr/local/bin and can be changed
+ by giving an optional prefix paramter to make install e.g:
+
+     make install prefix=/home/bin
